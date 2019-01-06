@@ -1,0 +1,4 @@
+.buildozer/
+.ropeproject/
+bin/
+buildozer.spec
