@@ -1,0 +1,90 @@
+#:kivy 1.0
+#: import ew kivy.uix.effectwidget
+
+
+<Tile>:
+    bcolor: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: self.bcolor
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<TitleScreen>:
+    canvas.before:
+        Color:
+            rgb: 1.0, 1.0, 0.89, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        pos_hint: {'center_y':0.5}
+        height: dp(90)
+        Label:
+            color: 0.35, 0.4, 0.43, 1
+            text: 'improve ur memory'
+            font_size: dp(26)
+            size_hint_y: None
+            height: dp(30)
+        Label:
+            color: 0.35, 0.4, 0.43, 1
+            text: 'by brad, seeker'
+            font_size: dp(13)
+            size_hint_y: None
+            height: dp(30)
+        Label:
+            color: 0.35, 0.4, 0.43, 1
+            text: 'tap anywhere to begin'
+            font_size: dp(16)
+            size_hint_y: None
+            height: dp(30)
+
+<GameScreen>:
+    EffectWidget:
+        # effects: ew.HorizontalBlurEffect(size=4.0),ew.VerticalBlurEffect(size=4.0)
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgb: 1.0, 1.0, 0.89, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            orientation: 'vertical'
+            BoxLayout:
+                canvas.before:
+                    Color:
+                        rgb: 0.35, 0.4, 0.43, 1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                orientation: 'horizontal'
+                size_hint_y: 0.0625
+                Label:
+                    id: time
+                    text: '0:00'
+                    font_size: dp(16)
+                    text_size: 100, None
+                    halign: 'left'
+                Label:
+                    id: difficulty
+                    text: ''
+                    font_size: dp(16)
+                    text_size: 100, None
+                    halign: 'center'
+                Label:
+                    id: status
+                    text: ''
+                    font_size: dp(16)
+                    text_size: 100, None
+                    halign: 'right'
+            FloatLayout:
+                GridLayout:
+                    pos_hint: {'center_x':.5, 'center_y':.5}
+                    id: grid
+                    rows: 6
+                    cols: 6
+                    padding: dp(32)
+                    spacing: dp(16)
